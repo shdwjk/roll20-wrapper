@@ -1,5 +1,8 @@
 .idea/workspace.xml
+tags
+build
+*.sw?
+.DS_Store
 
 # Dependency directory
 node_modules
-tags
