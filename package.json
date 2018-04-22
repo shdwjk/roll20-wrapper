@@ -4,7 +4,8 @@
   "description": "Wrapper object for roll20 globals to make for easier testing etc",
   "main": "./lib/roll20.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,14 +17,37 @@
     "url": "https://github.com/symposion/roll20-wrapper/issues"
   },
   "homepage": "https://github.com/symposion/roll20-wrapper#readme",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
   "devDependencies": {
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.2.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
-    "gulp-mocha": "^2.2.0"
+    "gulp-mocha": "^2.2.0",
+    "jest": "^22.4.3"
   },
-  "dependencies": {
-    "underscore": "^1.8.3"
+  "jest": {
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "lib",
+      "<rootDir>"
+    ],
+    "moduleNameMapper": {},
+    "modulePathIgnorePatterns": [
+      ".eslintrc.js"
+    ],
+    "notify": true,
+    "verbose": false,
+    "collectCoverage": false,
+    "coverageDirectory": "<rootDir>/build/coverage",
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    }
   }
 }
